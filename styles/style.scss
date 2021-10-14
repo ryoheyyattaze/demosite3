@@ -1,0 +1,467 @@
+$cBlack: black;
+$cWhite: white;
+$tTitle: 'Rampart One', cursive;
+$tText: 'Noto Sans JP', sans-serif;
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+#container {
+  width: 100%;
+  font-family: $tText;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  &__wrapper {
+    background-color: $cWhite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1800;
+  }
+  &__logo {
+    position: fixed;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-family: $tTitle;
+    margin: 0;
+  }
+  &__btn {
+    position: fixed;
+    top: 19px;
+    left: 10%;
+    z-index: 2000;
+    cursor: pointer;
+    & > span {
+      display: block;
+      width: 30px;
+      height: 1px;
+      background-color: $cBlack;
+      margin-bottom: 7px;
+      transition: .5s;
+      &.inview {
+        &:nth-child(1) {
+          transform: translateY(8px) rotate(135deg);
+          transition: .5s;
+        }
+        &:nth-child(2) {
+          transform: translatex(-50%) scaleX(0);
+          transition: .5s;
+        }
+        &:nth-child(3) {
+          transform: translateY(-8px) rotate(-135deg);
+          transition: .5s;
+        }
+      }
+    }
+  }
+  &__inner {
+    position: fixed;
+    top: 0;
+    left: 5%;
+    display: flex;
+    width: 90%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__ul {
+    display: flex;
+    width: 38%;
+    justify-content: space-between;
+    align-self: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    margin: auto 0;
+  }
+  &__li {
+    list-style: none;
+  }
+  &__link {
+    text-decoration: none;
+    color: $cBlack;
+  }
+  &__menu {
+    width: 80px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    margin: auto 0;
+    &:hover {
+      transform: scale(1.1);
+      opacity: .8;
+      transition: .3s;
+    }
+  }
+}
+
+.main_visual {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding-top: 50px;
+  & > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    width: 60%;
+    font-size: 36px;
+    font-family: $tTitle;
+    user-select: none;
+    & .char {
+      display: inline-block;
+      transform: translateY(50%);
+      opacity: 0;
+      &.inview {
+        transform: translateY(0);
+        opacity: 1;
+        transition: .5s;
+        @for $i from 1 through 15 {
+          &:nth-child(#{$i}) {
+            transition-delay: $i * .1s;
+          }
+        }
+      }  
+    }
+  }
+}
+
+.concept {
+  width: 100%;
+  background-color: $cBlack;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    color: $cWhite;
+    & > h1 {
+      font-weight: bold;
+      font-size: 36px;
+      text-align: left;
+      padding-top: 60px;
+      font-family: $tTitle;
+      transform: scale(0);
+      opacity: 0;
+      &.inview {
+        transform: scale(1);
+        opacity: 1;
+        transition: .8s;
+      }
+    }
+    & > p {
+      padding: 20px 0;
+    }
+  }
+}
+
+.about {
+  width: 100%;
+  margin-bottom: 100px;
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  &__li {
+    width: 100%;
+    height: 400px;
+    list-style: none;
+    transform: translateY(20%);
+    opacity: 0;
+    &.inview {
+      transform: translateY(0);
+      opacity: 1;
+      transition: .5s;
+
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 80%;
+    background-color: #ccc;
+    transition: .3s;
+    cursor: pointer;
+    &:hover {
+      transform: scale(.9);
+      opacity: .8;
+      transition: .3s;
+    }
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      cursor: pointer;
+    }
+  }
+  &__text {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: $tText;
+    & > a {
+      text-decoration: none;
+      color: $cBlack;
+    }
+  }
+}
+
+.menu {
+  width: 100%;
+  background-color: $cBlack;
+  padding-bottom: 100px;
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    color: $cWhite;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__title {
+    font-family: $tTitle;
+    padding: 30px 0;
+    font-size: 36px;
+  }
+
+  &__plan1 {
+    border: 1px solid $cWhite;
+  }
+  &__plan2 {
+    border: 1px solid $cWhite;
+  }
+  &__inner {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    & > h2 {
+      padding: 40px 0 0;
+    }
+    & > h3 {
+      position: relative;
+      letter-spacing: .2em;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $cWhite;
+      &::before {
+        content: '月額';
+        position: absolute;
+        top: 14%;
+        left: 26%;
+        width: 38px;
+        height: 20px;
+        background-color: $cWhite;
+        color: $cBlack;
+        font-size: 14px;
+        text-align: center;
+        vertical-align: center;
+      }
+    }
+    & > p {
+      padding: 30px 0;
+      border-bottom: 1px solid $cWhite;
+      &:nth-child(5) {
+        border: none;
+      }
+    }
+  }
+  &__btn {
+    overflow: hidden;
+    width: 50%;
+    padding: 10px;
+    border: 1px solid $cWhite;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    &:hover {
+      color: $cBlack;
+      transition: .3s;
+      &::before {
+        transform: translateX(0);
+        transition: .3s;
+        z-index: -1;
+      }
+    }
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: $cWhite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      transition: .3s;
+    }
+  } 
+}
+
+.contact {
+  width: 100%;
+  margin-bottom: 100px;
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    color: $cBlack;
+  }
+  &__title {
+    font-family: $tTitle;
+    padding: 30px 0;
+    font-size: 36px;
+  }
+  &__map {
+    margin-bottom: 40px;
+  }
+}
+
+.main_title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+.sub_title {
+  margin-bottom: 40px;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+.mobile_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+  &.inview {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1700;
+  }
+  &__cover {
+    width: 100%;
+    height: 100%;
+    background-color: $cWhite;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    &.inview {
+      opacity: 1;
+      visibility: visible;
+      transition: .5s;
+    }
+  }
+  &__ul {
+    width: 90%;
+    margin: 0 auto;
+    height: 70%;
+    padding: 120px 0 0;
+  }
+  &__li {
+    list-style: none;
+    width: 100%;
+    height: 100px;
+    font-size: 36px;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: .5s;
+    &.inview {
+      transition: .5s;
+      &:nth-child(1) {
+        transition: all .5s ease .3s;
+        transform: translateX(0);
+        opacity: 1;
+      }
+      &:nth-child(2) {
+        transition: all .5s ease .4s;
+        transform: translateX(0);
+        opacity: 1;
+      }
+      &:nth-child(3) {
+        transition: all .5s ease .5s;
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: $cBlack;
+    font-family: $tTitle;
+    transition: .3s;
+    &:hover {
+      color: $cBlack;
+      font-size: 1.1em;
+      transition: .3s;
+    }
+  }
+  &__footer {
+    width: 100%;
+    height: 30%;
+    padding-top: auto;
+    background-color: $cBlack;
+  }
+  &__inner {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: .5s;
+    &.inview {
+      transition: all .5s ease .6s;
+      transform: translateX(0);
+      opacity: 1;
+    }
+    & > h2 {
+      font-size: 36px;
+      color: $cWhite;
+      font-family: $tTitle;
+      padding-bottom: 30px;
+    }
+    & > p {
+      color: $cWhite;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  @import 'breakpoints/600up';
+}
+@media (min-width: 760px) {
+  @import 'breakpoints/760up';
+}
+@media (min-width: 960px) {
+  @import 'breakpoints/960up';
+}

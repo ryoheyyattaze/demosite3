@@ -1,0 +1,65 @@
+.header {
+  &__btn {
+    display: none;
+  }
+  &__ul {
+    opacity: 1;
+    visibility: visible;
+    width: 30%;
+    align-self: baseline;
+  }
+  &__logo {
+    top: 0;
+  }
+}
+
+.main_visual {
+  height: 100%;
+  padding: 0;
+  &__text {
+    font-size: 48px;
+  }
+}
+
+.concept {
+  height: 100vh;
+  &__wrapper {
+    & > h1 {
+      font-size: 48px;
+      padding: 50px 0 40px;
+    }
+  }
+}
+
+.about {
+  padding-top: 100px;
+  &__ul {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__li {
+    width: 32%;
+  }
+}
+
+.menu {
+  &__content {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+  &__title {
+    font-size: 48px;
+  }
+  &__plan1 {
+    width: 50%;
+  }
+  &__plan2 {
+    width: 50%;
+  }
+}
+
+.contact {
+  padding-top: 60px;
+}

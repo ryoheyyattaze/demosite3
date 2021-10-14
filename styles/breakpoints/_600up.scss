@@ -1,0 +1,26 @@
+.main_visual {
+  &__text {
+    left: 5%;
+  }
+}
+
+.about {
+  &__text {
+    font-size: 24px;
+  }
+}
+
+.menu {
+  &__title {
+    font-size: 48px;
+  }
+  &__btn {
+    width: 40%;
+  }
+}
+
+.contact {
+  &__title {
+    font-size: 48px;
+  }
+}
