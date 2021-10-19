@@ -207,11 +207,13 @@ html {
       opacity: .8;
       transition: .3s;
     }
-    & > img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      cursor: pointer;
+    & > a {
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+      }
     }
   }
   &__text {
@@ -272,11 +274,12 @@ html {
         left: 26%;
         width: 38px;
         height: 20px;
+        line-height: 20px;
         background-color: $cWhite;
         color: $cBlack;
         font-size: 14px;
         text-align: center;
-        vertical-align: center;
+        display: inline-block;
       }
     }
     & > p {
@@ -318,6 +321,20 @@ html {
       transition: .3s;
     }
   } 
+}
+
+@media screen and (max-width: 400px) {
+  .menu {
+    &__inner {
+      & > h3 {
+        &::before {
+          position: absolute;
+          top: 14%;
+          left: 15%;
+        }
+      } 
+    }
+  }
 }
 
 .contact {

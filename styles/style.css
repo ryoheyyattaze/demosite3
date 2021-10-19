@@ -341,7 +341,7 @@ html {
   transition: .3s;
 }
 
-.about__img > img {
+.about__img > a > img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -423,11 +423,12 @@ html {
   left: 26%;
   width: 38px;
   height: 20px;
+  line-height: 20px;
   background-color: white;
   color: black;
   font-size: 14px;
   text-align: center;
-  vertical-align: center;
+  display: inline-block;
 }
 
 .menu__inner > p {
@@ -477,6 +478,14 @@ html {
           transform: translateX(-100%);
   -webkit-transition: .3s;
   transition: .3s;
+}
+
+@media screen and (max-width: 400px) {
+  .menu__inner > h3::before {
+    position: absolute;
+    top: 14%;
+    left: 15%;
+  }
 }
 
 .contact {
