@@ -484,7 +484,7 @@ html {
   .menu__inner > h3::before {
     position: absolute;
     top: 14%;
-    left: 15%;
+    left: 10%;
   }
 }
 
