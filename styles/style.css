@@ -480,11 +480,11 @@ html {
   transition: .3s;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   .menu__inner > h3::before {
     position: absolute;
     top: 14%;
-    left: 10%;
+    left: 15%;
   }
 }
 
