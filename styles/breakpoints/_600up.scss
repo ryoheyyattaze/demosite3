@@ -17,6 +17,15 @@
   &__btn {
     width: 40%;
   }
+  &__inner {
+    & > h3 {
+      &::before {
+        position: absolute;
+        top: 14%;
+        left: 20%;
+      }
+    }
+  }
 }
 
 .contact {
